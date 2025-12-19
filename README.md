@@ -1,6 +1,6 @@
 # Machine Failure Prediction using AI4I 2020 Dataset
 
-This project focuses on predictive maintenance by identifying potential machine failures using the AI4I 2020 dataset. It implements a complete machine learning workflow along with backend and frontend applications for real-time prediction.
+This project focuses on predictive maintenance by identifying potential machine failures using the AI4I 2020 dataset. It implements a complete machine learning workflow along with a FastAPI backend, Streamlit interface, and React frontend for real-time prediction.
 
 ---
 
@@ -12,7 +12,7 @@ The project includes:
 
 - Data preprocessing and resampling
 - Machine learning model training
-- REST API for predictions
+- FastAPI backend for predictions
 - Interactive web interfaces
 
 ---
@@ -65,7 +65,7 @@ A resampled version of the dataset is used to handle class imbalance.
 
 ## Application Components
 
-**Backend API**  
+**FastAPI Backend**  
 Provides prediction endpoints using FastAPI and serves trained models for inference.
 
 **Streamlit Application**  
