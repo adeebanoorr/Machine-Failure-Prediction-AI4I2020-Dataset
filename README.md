@@ -33,11 +33,13 @@ A resampled version of the dataset is used to handle class imbalance.
 - `Dataset/` – contains the processed dataset  
 - `api/` – FastAPI backend for inference  
 - `myreact/` – React frontend application  
-- `artifacts/` – trained model outputs (ignored in version control)  
+- `artifacts/` – trained model outputs (e.g., LightGBM models, feature importance), usually ignored in version control via `.gitignore`  
 - `training scripts/` – model training and preprocessing logic  
 - `streamlit_app/` – Streamlit-based user interface  
 - `requirements.txt` – project dependencies  
-- `.gitignore` – excludes virtual environments and binaries  
+- `.gitignore` – excludes virtual environments, large binaries, and model files  
+
+> **Note:** If you want to include the trained models in GitHub, you can override `.gitignore`, but for large models it is recommended to use external storage (e.g., Google Drive, S3, or GitHub Releases).
 
 ---
 
