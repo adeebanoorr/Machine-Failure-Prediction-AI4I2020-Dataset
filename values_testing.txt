@@ -1,0 +1,29 @@
+[
+   {
+      "product_id": "M15054",
+      "type": "M",
+      "air_temperature": 298.2,
+      "process_temperature": 308.5,
+      "rotational_speed": 2678,
+      "torque": 10.7,
+      "tool_wear": 86
+    },
+    {
+      "product_id": "M14860",
+      "type": "M",
+      "air_temperature": 298.1,
+      "process_temperature": 308.6,
+      "rotational_speed": 1551,
+      "torque": 42.8,
+      "tool_wear": 0
+    },
+    {
+      "product_id": "L47230",
+      "type": "L",
+      "air_temperature": 298.9,
+      "process_temperature": 309.1,
+      "rotational_speed": 2861,
+      "torque": 4.6,
+      "tool_wear": 143
+    }
+]

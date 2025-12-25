@@ -1,0 +1,177 @@
+:root {
+  --primary: #4f46e5;
+  --bg: #f1f5f9;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+.dashboard-container {
+  padding: 20px;
+  /* Changed from max-width 1400px to width 98vw to use full screen */
+  width: 98vw; 
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* THREE COLUMN GRID */
+.dashboard-grid {
+  display: flex;
+  gap: 20px;
+  /* Changed to stretch so all cards are the same height */
+  align-items: stretch; 
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  background: var(--card-bg);
+  /* Increased padding to make boxes feel larger */
+  padding: 30px; 
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Increased min-widths so the boxes stay large */
+.side-panel { 
+  flex: 1; 
+  min-width: 350px; 
+}
+
+.main-panel { 
+  flex: 1.2; 
+  min-width: 450px; 
+}
+
+h3 {
+  margin-top: 0;
+  border-left: 4px solid var(--primary);
+  padding-left: 12px;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+/* Feature Importance Graph */
+.importance-plot {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #f8fafc;
+  /* Ensures the image fills the space */
+  object-fit: contain; 
+}
+
+/* Forms */
+.single-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+  align-items: center;
+}
+
+.single-form-grid label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+input, select {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.btn-primary, .btn-batch {
+  margin-top: auto; /* Pushes button to bottom of card */
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover, .btn-batch:hover {
+  background: #4338ca;
+}
+
+.btn-primary:disabled, .btn-batch:disabled {
+  background: #94a3b8;
+}
+
+/* Results Display */
+.result-alert {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.danger { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+.success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+
+/* Batch Table */
+.mini-table-wrapper {
+  margin-top: 20px;
+  /* Increased height for the results table */
+  max-height: 500px; 
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.results-table th {
+  background: #f8fafc;
+  padding: 12px 10px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.results-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.row-fail { background: #fff1f2; color: #be123c; font-weight: 600; }
+.row-pass { color: #15803d; }
+
+.file-upload-area {
+  padding: 25px;
+  border: 2px dashed #cbd5e1;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.file-label {
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: bold;
+}

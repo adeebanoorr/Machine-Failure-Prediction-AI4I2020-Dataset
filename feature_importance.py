@@ -5,18 +5,38 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # -------------------------------------------------
+# BASE PROJECT DIRECTORY
+# -------------------------------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# -------------------------------------------------
 # PATH CONFIGURATION
 # -------------------------------------------------
 
 # Backend artifacts
-ARTIFACTS_DIR = "artifacts"
+ARTIFACTS_DIR = os.path.join(BASE_DIR, "artifacts")
 MODEL_PATH = os.path.join(ARTIFACTS_DIR, "lightgbm_model.joblib")
 
-# React public folder (update only if project location changes)
-REACT_PUBLIC_DIR = r"D:\projects\Machine_failure_ai4i2020_dataset\myreact\public"
-os.makedirs(REACT_PUBLIC_DIR, exist_ok=True)
+# React public folder
+REACT_PUBLIC_DIR = os.path.join(
+    BASE_DIR,
+    "myreact",
+    "public"
+)
 
-OUTPUT_IMAGE_PATH = os.path.join(REACT_PUBLIC_DIR, "feature_importance.png")
+# api_2 folder (new requirement)
+API2_DIR = os.path.join(
+    BASE_DIR,
+    "api_2"
+)
+
+# Ensure directories exist
+os.makedirs(REACT_PUBLIC_DIR, exist_ok=True)
+os.makedirs(API2_DIR, exist_ok=True)
+
+# Output paths
+REACT_IMAGE_PATH = os.path.join(REACT_PUBLIC_DIR, "feature_importance.png")
+API2_IMAGE_PATH = os.path.join(API2_DIR, "feature_importance.png")
 
 # -------------------------------------------------
 # LOAD TRAINED MODEL
@@ -83,10 +103,13 @@ for container in ax.containers:
 plt.tight_layout()
 
 # -------------------------------------------------
-# SAVE IMAGE FOR WEB USE
+# SAVE IMAGE (BOTH LOCATIONS)
 # -------------------------------------------------
 
-plt.savefig(OUTPUT_IMAGE_PATH, dpi=300)
+plt.savefig(REACT_IMAGE_PATH, dpi=300)
+plt.savefig(API2_IMAGE_PATH, dpi=300)
 plt.close()
 
-print(f"Feature importance image saved successfully at:\n{OUTPUT_IMAGE_PATH}")
+print("Feature importance image saved successfully at:")
+print(REACT_IMAGE_PATH)
+print(API2_IMAGE_PATH)
